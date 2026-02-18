@@ -1,9 +1,9 @@
 @import url("fonts.css");
- * { 
+
+* {
     margin: 0;
     padding: 0; 
-    box-sizing: border-box; 
-
+    box-sizing: border-box;
 } 
  
 html, body { 
@@ -15,30 +15,48 @@ html, body {
 .header { 
     height: 10%; 
     position: fixed; 
-    right: 0;  
-       
+    right: 0;
 } 
  
 .header_nav{ 
     height: 100%; 
 }
+
+.header_nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    height: 100%;
+    padding-right: 50px;
+    gap: 43px;
+}
+
 .header_nav a { 
-    text-decoration: none; 
-    font-family: "SOROKA"; 
+    text-decoration: none;
+    font-family: "SOROKA", sans-serif;
     color: #0042A6; 
     font-size: 24px; 
-    transition: color 0.3s;  
-} 
+    transition: color 0.3s;
+    position: relative;
+}
+
+.header_nav a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background-color: #0051ff;
+    transition: width 0.3s ease;
+}
+
+.header_nav a:hover::after {
+    width: 100%;
+}
+
 .header_nav a:hover { 
     color: #0051ff;
 }
-.header_nav ul { 
-    display: flex;  
-    align-items: center; 
-    justify-content: flex-end;  
-    list-style: none; 
-    height: 100%; 
-    padding-right: 50px; 
-    gap: 43px;
-} 
- 
